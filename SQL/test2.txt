@@ -1,0 +1,7 @@
+SELECT 
+	SUM (c.amount) AS Total_amount_in_the_month
+FROM
+	public.core_order a INNER JOIN public.auth_user b ON a.user_id = b.id INNER JOIN public.core_payment c ON a.payment_id = c.id 
+WHERE
+	a.ordered_date >= '2020-03-01' and a.ordered_date <= '2020-03-31'
+
